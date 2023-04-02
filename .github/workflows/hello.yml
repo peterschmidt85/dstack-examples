@@ -22,6 +22,9 @@ jobs:
       - name: Configure remote
         run: |
           dstack config aws --bucket dstack-142421590066-eu-west-1 --region eu-west-1
+      - name: Generate new SSH key
+        run: |
+          ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
       - name: Initialize dstack
         run: |
           dstack init
