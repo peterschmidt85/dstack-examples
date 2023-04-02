@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install dstack
+          python -c "import sys; print(sys.stdout.isatty())"
       - name: Configure remote
         run: |
           dstack config aws --bucket dstack-142421590066-eu-west-1 --region eu-west-1
